@@ -1,0 +1,8 @@
+#pokemon-photo img {
+    width: 300px;
+}
+
+#list {
+    height: 50vh;
+    overflow: scroll;
+}
