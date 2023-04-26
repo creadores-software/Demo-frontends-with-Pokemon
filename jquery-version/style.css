@@ -6,3 +6,7 @@
     height: 50vh;
     overflow: scroll;
 }
+
+#list table tbody tr {
+    cursor: grab;
+}

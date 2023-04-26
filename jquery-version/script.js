@@ -2,9 +2,9 @@
 
 $(document).ready(function () {
 
-    $('#button-load').click(load_pokemon_list);
-    $('#button-clear').click(clear_pokemon_list);
-    $('#list table').children('tbody').click(select_pokemon);
+    $('#button-load').click(handle_load_pokemon_list);
+    $('#button-clear').click(handle_clear_pokemon_list);
+    $('#list table tbody').click(select_pokemon);
 });
 
 //////////////////////////////////////////////////////////
@@ -13,7 +13,7 @@ var pokemons = [];
 
 //////////////////////////////////////////////////////////
 
-function load_pokemon_list(event)
+function handle_load_pokemon_list(event)
 {
     if(pokemons.length > 0)
     {
@@ -21,30 +21,20 @@ function load_pokemon_list(event)
         return;
     }
 
-    list_pokemons(show_pokemon_list);
+    load_pokemons(show_pokemon_list);
 }
 
 //////////////////////////////////////////////////////////
 
-function clear_pokemon_list(event)
-{
-    pokemons = [];
-
-    $('#list table tbody tr').remove();
-}
-
-//////////////////////////////////////////////////////////
-
-function list_pokemons(callback) {
+function load_pokemons(callback) {
     var url = "https://pokeapi.co/api/v2/pokemon/";
 
     $.get(url, function (data) {
         pokemons = data.results;
         callback(pokemons);
-    })
-        .fail(function (error) {
-            alert("Error " + error.status + ": " + error.responseText)
-        });
+    }).fail(function (error) {
+        alert("Error " + error.status + ": " + error.responseText)
+    });
 }
 
 //////////////////////////////////////////////////////////
@@ -56,6 +46,15 @@ function show_pokemon_list(data) {
         var tr = `<tr><td>${pokemon.name}</td></tr>`;
         table.append(tr);
     });
+}
+
+//////////////////////////////////////////////////////////
+
+function handle_clear_pokemon_list(event)
+{
+    pokemons = [];
+
+    $('#list table tbody tr').remove();
 }
 
 //////////////////////////////////////////////////////////
@@ -74,9 +73,9 @@ function get_pokemon(url, callback) {
     $.get(url, function (data) {
         callback(data);
     })
-        .fail(function (error) {
-            alert("Error " + error.status + ": " + error.responseText)
-        });
+    .fail(function (error) {
+        alert("Error " + error.status + ": " + error.responseText)
+    });
 }
 
 //////////////////////////////////////////////////////////
