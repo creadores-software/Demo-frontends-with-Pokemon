@@ -7,7 +7,7 @@ function PokemonList() {
   const [pokemonData, setPokemonData] = useState(null);
 
   useEffect(() => {
-    axios.get('https://pokeapi.co/api/v2/pokemon/')
+    axios.get('https://pokeapi.co/api/v2/pokemon/?limit=150&offset=0')
       .then(response => {
         setPokemonList(response.data.results);
       })
@@ -51,13 +51,11 @@ function PokemonList() {
           <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />
         </div>
       )}
-      {!pokemonData && (
-        <ul>
-          {pokemonList.map(pokemon => (
-            <li key={pokemon.name}>{pokemon.name}</li>
-          ))}
-        </ul>
-      )}
+      <ul>
+        {pokemonList.map(pokemon => (
+          <li key={pokemon.name}>{pokemon.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }
