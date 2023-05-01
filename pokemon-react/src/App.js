@@ -1,7 +1,10 @@
-import { Layout } from "antd";
-import {} from "@ant-design/icons";
 
+import { Layout } from "antd";
 import "./App.css";
+import PokemonList from "./components/PokemonList";
+import {
+  Layout
+} from "antd";
 import PokemonList from "./components/PokemonList";
 const { Content } = Layout;
 
