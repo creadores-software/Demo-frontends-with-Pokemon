@@ -1,38 +1,106 @@
-.App {
+@import url("https://fonts.cdnfonts.com/css/press-start-2p");
+
+.hide {
+  display: none;
+}
+
+.center {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.font {
+  font-family: "Press Start 2P", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.title input {
+  margin-left: auto;
+  height: 47px;
+  font-size: 0.7em;
+  width: 35%;
+}
+
+.inner-container {
+  display: flex;
+}
+
+.pokemon-detail {
+  width: 360px;
+  height: 320px;
+  margin: 4px;
+  position: sticky;
+  top: 10px;
+}
+
+.pokemon-detail img {
+  height: 250px;
+  max-height: 250px;
+}
+
+.pokemon-detail h2 {
+  border-bottom: 2px black dashed;
+  padding-bottom: 10px;
+}
+
+.abilities,
+.types {
+  border-radius: 5px;
+  border: 2px dashed black;
+  padding: 1px;
+}
+
+.abilities div,
+.types div {
+  width: 100%;
+  color: black;
+  background-color: #ffcb05;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 2px 0;
+  box-sizing: border-box;
+}
+
+.types div {
+  color: white;
+  background-color: #17285e;
+}
+
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-rows: fit-content(47px);
+  align-content: flex-start;
+  row-gap: 0;
+  width: 100%;
+  margin-left: auto;
+}
+
+.pokemon-item {
+  font-family: "Press Start 2P", sans-serif;
+  padding: 10px;
+  border: 1px black dashed;
+  display: flex;
+  cursor: pointer;
+  background-color: #375caaa1;
+  border-radius: 4px;
+  margin: 1px 2px;
+  font-size: 0.65em;
+  align-items: center;
+}
+
+.pokemon-item:hover {
+  background-color: #17285e;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pokemon-img {
+  margin-left: auto;
 }
