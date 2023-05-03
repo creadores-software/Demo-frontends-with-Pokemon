@@ -5,4 +5,4 @@ En este repositorio se encuentra una comparación rápida entre diferentes libre
 ## Librerías
 
  - jQuery - Jorge I. Meza (:computer:  [demostración](https://creadores-software.github.io/Demo-frontends-with-Pokemon/jquery-version/))
- - React - Yaneth Rendón (:computer:  [demostración](https://creadores-software.github.io/Demo-frontends-with-Pokemon/react-version/))
+ - React - Yaneth Mejía 
